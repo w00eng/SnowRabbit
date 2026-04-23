@@ -1,28 +1,28 @@
 fileFormatVersion: 2
-guid: 79e3e424ce7a19e4a96a1094339d5765
+guid: 91d156ab6cde03b48a11baee9844edc0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4198539953173106860
-    second: anim_1_idle_modify2_0
+      213: -8259479430423769809
+    second: anim_1_idle_0
   - first:
-      213: -8260855962357974566
-    second: anim_1_idle_modify2_1
+      213: -2273654376980165333
+    second: anim_1_idle_1
   - first:
-      213: 7821671829110874046
-    second: anim_1_idle_modify2_2
+      213: -796377441294205097
+    second: anim_1_idle_2
   - first:
-      213: 4839961460911622190
-    second: anim_1_idle_modify2_3
+      213: 2751021829624165420
+    second: anim_1_idle_3
   - first:
-      213: 4957800387711354937
-    second: anim_1_idle_modify2_4
+      213: -8687656292700891620
+    second: anim_1_idle_4
   - first:
-      213: 3718260995275427836
-    second: anim_1_idle_modify2_5
+      213: -2433606110266994660
+    second: anim_1_idle_5
   - first:
-      213: -7056719835837595873
-    second: anim_1_idle_modify2_6
+      213: -6793646873878364483
+    second: anim_1_idle_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -118,7 +118,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: anim_1_idle_modify2_0
+      name: anim_1_idle_0
       rect:
         serializedVersion: 2
         x: 60
@@ -133,14 +133,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 45fe4db482acbb5c0800000000000000
-      internalID: -4198539953173106860
+      spriteID: f2d02f7f73f606d80800000000000000
+      internalID: -8259479430423769809
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim_1_idle_modify2_1
+      name: anim_1_idle_1
       rect:
         serializedVersion: 2
         x: 380
@@ -155,14 +155,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ad93cf6254b8b5d80800000000000000
-      internalID: -8260855962357974566
+      spriteID: b2dc516f36b5270e0800000000000000
+      internalID: -2273654376980165333
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim_1_idle_modify2_2
+      name: anim_1_idle_2
       rect:
         serializedVersion: 2
         x: 700
@@ -177,14 +177,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ebf55db66192c8c60800000000000000
-      internalID: 7821671829110874046
+      spriteID: 75f3680cfe2b2f4f0800000000000000
+      internalID: -796377441294205097
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim_1_idle_modify2_3
+      name: anim_1_idle_3
       rect:
         serializedVersion: 2
         x: 1020
@@ -199,14 +199,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e28c7343e4ffa2340800000000000000
-      internalID: 4839961460911622190
+      spriteID: c24f71c47c79d2620800000000000000
+      internalID: 2751021829624165420
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim_1_idle_modify2_4
+      name: anim_1_idle_4
       rect:
         serializedVersion: 2
         x: 1340
@@ -221,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 93844d06f25adc440800000000000000
-      internalID: 4957800387711354937
+      spriteID: c1650e681ae3f6780800000000000000
+      internalID: -8687656292700891620
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim_1_idle_modify2_5
+      name: anim_1_idle_5
       rect:
         serializedVersion: 2
         x: 1660
@@ -243,14 +243,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cff059dccaae99330800000000000000
-      internalID: 3718260995275427836
+      spriteID: c10d052f2281a3ed0800000000000000
+      internalID: -2433606110266994660
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim_1_idle_modify2_6
+      name: anim_1_idle_6
       rect:
         serializedVersion: 2
         x: 1980
@@ -265,8 +265,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f1f727982be711e90800000000000000
-      internalID: -7056719835837595873
+      spriteID: dbe7909992e18b1a0800000000000000
+      internalID: -6793646873878364483
       vertices: []
       indices: 
       edges: []
@@ -275,7 +275,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c067e813b4885cc498cc1ffe2811450c
+    spriteID: 9908807a69831b44f9024d98f9d3835c
     internalID: 0
     vertices: []
     indices: 
@@ -285,15 +285,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":220.0,"y":260.0},"gridSpriteOffset":{"x":60.0,"y":60.0},"gridSpritePadding":{"x":100.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":1,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":7.0,"y":1.0},"gridSpriteSize":{"x":220.0,"y":260.0},"gridSpriteOffset":{"x":60.0,"y":60.0},"gridSpritePadding":{"x":100.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      anim_1_idle_modify2_0: -4198539953173106860
-      anim_1_idle_modify2_1: -8260855962357974566
-      anim_1_idle_modify2_2: 7821671829110874046
-      anim_1_idle_modify2_3: 4839961460911622190
-      anim_1_idle_modify2_4: 4957800387711354937
-      anim_1_idle_modify2_5: 3718260995275427836
-      anim_1_idle_modify2_6: -7056719835837595873
+      anim_1_idle_0: -8259479430423769809
+      anim_1_idle_1: -2273654376980165333
+      anim_1_idle_2: -796377441294205097
+      anim_1_idle_3: 2751021829624165420
+      anim_1_idle_4: -8687656292700891620
+      anim_1_idle_5: -2433606110266994660
+      anim_1_idle_6: -6793646873878364483
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -3,36 +3,47 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    private Vector2 spawnPoint = Vector2.zero;
+    private PlayerMovement _pMove;
+    private PlayerAnimation _pAnim;
+
+    private void Start()
+    {
+        _pMove = GetComponent<PlayerMovement>();
+        _pAnim = GetComponent<PlayerAnimation>();
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Spike"))
         {
-            transform.position = spawnPoint;
+            _pAnim.Melt();
+        }
+        else if (collision.gameObject.CompareTag("Wall") && _pMove.isWall)
+        {
+            _pMove.isWallStop = true;
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Camera"))
+        if (collision.TryGetComponent<CinemachineCamera>(out CinemachineCamera _camera))
         {
-            collision.gameObject.GetComponent<CinemachineCamera>().Priority = 1;
+            _camera.Priority = 1;
         }
         
-        if (collision.gameObject.CompareTag("Respawn"))
+        if (collision.TryGetComponent<SpawnPoint>(out SpawnPoint _spawn))
         {
-            spawnPoint = collision.gameObject.GetComponent<SpawnPoint>().spawnPos;
-            collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            _pMove.spawnPoint = _spawn.spawnPos;
+            collision.enabled = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Camera"))
+        if (collision.TryGetComponent<CinemachineCamera>(out CinemachineCamera _camera))
         {
-            collision.gameObject.GetComponent<CinemachineCamera>().Priority = 0;
-            collision.gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
+            _camera.Priority = 0;
+            collision.isTrigger = false;
         }
     }
 }
