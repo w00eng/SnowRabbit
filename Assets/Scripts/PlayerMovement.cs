@@ -5,13 +5,16 @@ public class PlayerMovement: MonoBehaviour
 {
     // Character
     private Rigidbody2D _rigid;
-    public bool playerPause = false;
+    private SpriteRenderer _render;
+
+    public Vector2 spawnPoint = Vector2.zero;
+    public static bool playerPause = false;
 
 
     // Movement
     [Header("Movement")]
     [Tooltip("Move speed of the character")]
-    public float moveSpeed = 10f;
+    [Min(0f)] public float moveSpeed = 10f;
 
     [Tooltip("Magnification of move speed when the character is charging the jump")]
     [Range(0f, 1f)] public float chargingModifyX = 0.4f;
@@ -25,27 +28,30 @@ public class PlayerMovement: MonoBehaviour
     // Jump
     [Header("Jump")]
     [Tooltip("Default jump force of the character")]
-    public float defaultJumpForce = 13f;
+    [Min(0f)] public float defaultJumpForce = 13f;
 
     [Tooltip("Magnification of jump force at maximum charge")]
-    [Range(1f, 10f)] public float maxChargeMultiplier = 2f;
+    [Min(0f)] public float maxChargeMultiplier = 2f;
 
     [Tooltip("Charge time required to reach maximum jump force (in seconds)")]
-    [Range(0f, 10f)] public float maxChargeTime = 1.5f;
+    [Min(0f)] public float maxChargeTime = 1.5f;
+
+    [Tooltip("Whether the character is charging the jump or not")]
+    public bool isJumpCharging = false;
 
     [Space(7)]
     [Tooltip("Wall jump force of the character")]
-    public float wallJumpForce = 30f;
+    [Min(0f)] public float wallJumpForce = 30f;
+
+    [Tooltip("Whether the character does wall jump or not")]
+    public bool isWallJump = false;
 
     [Space(7)]
     [Tooltip("Jump force of the character, when character is on the mushroom")]
-    public float mushroomJumpForce = 30f;
+    [Min(0f)] public float mushroomJumpForce = 30f;
 
     private InputAction _jumpAction;
     private float jumpChargeTime = 0f;
-    private float finalJumpForce = 0f;
-    private bool isJumpCharging = false;
-    private bool isWallJump = false;
 
 
     // Ground Check
@@ -54,14 +60,14 @@ public class PlayerMovement: MonoBehaviour
     public float groundCheckOffset = -0.7f;
 
     [Tooltip("Radius of the ground check.")]
-    public float groundCheckRadius = 0.3f;
+    [Min(0.00001f)] public float groundCheckRadius = 0.3f;
 
     [Space(7)]
     [Tooltip("Layer the character uses as the ground")]
     public LayerMask layerGround;
 
     [Tooltip("Whether the character is on the ground or not")]
-    public  bool isGround;
+    public bool isGround;
 
     [Space(7)]
     [Tooltip("Layer the character uses as the mushroom")]
@@ -83,7 +89,7 @@ public class PlayerMovement: MonoBehaviour
     public float wallCheckPointOffset = 0.6f;
 
     [Tooltip("Distance to detect the climbing wall")]
-    public float wallCheckDistance = 0.1f;
+    [Min(0f)] public float wallCheckDistance = 0.1f;
 
     [Tooltip("Layer the character uses as the climbing wall")]
     public LayerMask layerWall;
@@ -91,26 +97,52 @@ public class PlayerMovement: MonoBehaviour
     [Tooltip("Whether the character is on the climbing wall or not")]
     public bool isWall;
 
+    [Space(7)]
+    [Tooltip("Time when the character can be stopped on the climbing wall (in second)")]
+    [Min(0f)] public float maxWallStopTime = 0.5f;
+
+    [Tooltip("Whether the character is stopped on the climbing wall or not")]
+    public bool isWallStop;
+
+    private float wallStopTime = 0f;
+
 
     void Start()
     {
         _rigid = GetComponent<Rigidbody2D>();
+        _render = GetComponent<SpriteRenderer>();
         _jumpAction = InputSystem.actions.FindAction("Jump");
     }
 
     void Update()
     {
-        Jump();
+        if (playerPause)
+        {
+            return;
+        }
+
         GroundCheck();
         WallCheck();
+        Jump();
+
+        if (isWallStop)
+        {
+            WallStop();
+        }
     }
 
     private void FixedUpdate()
     {
-        if (playerPause)    return;
+        if (playerPause)
+        {
+            return;
+        }
+
+        _render.flipX = (inputDirection.x == 0f) ? _render.flipX : (inputDirection.x < 0f);
 
         if (isWallJump)
         {
+            _rigid.gravityScale = 1f;
             _rigid.linearVelocity = Vector2.zero;
             _rigid.linearVelocity = new Vector2(-inputDirection.x * wallJumpForce, wallJumpForce);
 
@@ -120,8 +152,8 @@ public class PlayerMovement: MonoBehaviour
         {
             float moveModifyX = isJumpCharging ? (moveSpeed * chargingModifyX) : moveSpeed;
             float moveModifyY = isWall ? gripModifyY : 1f;
-            _rigid.linearVelocity = new Vector2(inputDirection.x * moveModifyX, (_rigid.linearVelocity.y * moveModifyY) + finalJumpForce);
-            finalJumpForce = 0f;
+
+            _rigid.linearVelocity = new Vector2(inputDirection.x * moveModifyX, _rigid.linearVelocity.y * moveModifyY);
         }
     }
 
@@ -141,7 +173,7 @@ public class PlayerMovement: MonoBehaviour
         bool wallCheckCenter = Physics2D.Raycast(wallCheckCenterPoint, wallCheckDirection, wallCheckDistance, layerWall);
         bool wallCheckTop = Physics2D.Raycast(wallCheckTopPoint, wallCheckDirection, wallCheckDistance, layerWall);
 
-        isWall = wallCheckTop && wallCheckCenter;
+        isWall = wallCheckTop && wallCheckCenter && !isGround;
     }
 
     public void OnMove(InputValue value)
@@ -163,22 +195,61 @@ public class PlayerMovement: MonoBehaviour
             if (_jumpAction.WasReleasedThisFrame())
             {
                 float chargeRatio = jumpChargeTime / maxChargeTime;
-                finalJumpForce = defaultJumpForce * Mathf.Lerp(1f, maxChargeMultiplier, chargeRatio);
+                float finalJumpForce = defaultJumpForce * Mathf.Lerp(1f, maxChargeMultiplier, chargeRatio);
+                _rigid.linearVelocityY = finalJumpForce;
 
                 isJumpCharging = false;
                 jumpChargeTime = 0f;
             }
         }
-        else if (isMushroom)
+        else
+        {
+            isJumpCharging = false;
+            jumpChargeTime = 0f;
+        }
+
+        if (isMushroom)
         {
             _rigid.linearVelocityY = mushroomJumpForce;
         }
-        else if (isWall)
+        
+        if (isWall)
         {
             if (_jumpAction.WasReleasedThisFrame())
             {
                 isWallJump = true;
             }
         }
+    }
+
+    private void WallStop()
+    {
+        wallStopTime += Time.deltaTime;
+        _rigid.gravityScale = 0f;
+
+        if (wallStopTime >= maxWallStopTime || !isWall)
+        {
+            isWallStop = false;
+            _rigid.gravityScale = 1f;
+            wallStopTime = 0f;
+        }
+    }
+
+    public void PlayerPauseOn()
+    {
+        playerPause = true;
+        _rigid.linearVelocity = Vector2.zero;
+        _rigid.gravityScale = 0f;
+    }
+
+    public void PlayerPauseOff()
+    {
+        playerPause = false;
+        _rigid.gravityScale = 1f;
+    }
+
+    public void Respawn()
+    {
+        transform.position = spawnPoint;
     }
 }

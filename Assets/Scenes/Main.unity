@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 174197057}
   m_Layer: 8
   m_Name: ClimbingWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1021,9 +1021,11 @@ GameObject:
   - component: {fileID: 1263951383}
   - component: {fileID: 1263951376}
   - component: {fileID: 1263951382}
+  - component: {fileID: 1263951385}
   - component: {fileID: 1263951380}
   - component: {fileID: 1263951381}
   - component: {fileID: 1263951384}
+  - component: {fileID: 1263951386}
   m_Layer: 6
   m_Name: Character
   m_TagString: Untagged
@@ -1107,12 +1109,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -4198539953173106860, guid: 79e3e424ce7a19e4a96a1094339d5765, type: 3}
+  m_Sprite: {fileID: -8259479430423769809, guid: 91d156ab6cde03b48a11baee9844edc0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.4666667, y: 1.7333333}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1174,14 +1176,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 031a369479126b8489322ddddf0b146f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  playerPause: 0
+  spawnPoint: {x: 0, y: 0}
   moveSpeed: 10
   chargingModifyX: 0.4
   gripModifyY: 0.4
   defaultJumpForce: 13
   maxChargeMultiplier: 2
   maxChargeTime: 1.5
+  isJumpCharging: 0
   wallJumpForce: 30
+  isWallJump: 0
   mushroomJumpForce: 30
   groundCheckOffset: -0.7
   groundCheckRadius: 0.3
@@ -1201,6 +1205,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   isWall: 0
+  maxWallStopTime: 0.5
+  isWallStop: 0
 --- !u!251 &1263951382
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -1269,6 +1275,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7235d31889126ef41b13c95227e248c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
+--- !u!95 &1263951385
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263951374}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 82fb55bd525e15644a760ed8f966dcd3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 1
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1263951386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263951374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4486efcd5e54fe408bbefb0e63d31ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimation
 --- !u!1 &1349955891
 GameObject:
   m_ObjectHideFlags: 0

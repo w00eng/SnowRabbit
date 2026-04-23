@@ -1,0 +1,535 @@
+fileFormatVersion: 2
+guid: 184b159c66da815448d74dafeb9319f2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8450833679327685710
+    second: anim_1_melt_0
+  - first:
+      213: 9154299964197937979
+    second: anim_1_melt_1
+  - first:
+      213: 4622990432012315591
+    second: anim_1_melt_2
+  - first:
+      213: 941954096456377121
+    second: anim_1_melt_3
+  - first:
+      213: -3526035252027035454
+    second: anim_1_melt_4
+  - first:
+      213: -5317802515276557202
+    second: anim_1_melt_5
+  - first:
+      213: 8047816267196026130
+    second: anim_1_melt_6
+  - first:
+      213: -2739377193462559870
+    second: anim_1_melt_7
+  - first:
+      213: -1660556603146314127
+    second: anim_1_melt_8
+  - first:
+      213: 3225315205393287767
+    second: anim_1_melt_9
+  - first:
+      213: -6516567131768314870
+    second: anim_1_melt_10
+  - first:
+      213: -4725134815240808626
+    second: anim_1_melt_11
+  - first:
+      213: -5399378220181678694
+    second: anim_1_melt_12
+  - first:
+      213: -5588375492495127131
+    second: anim_1_melt_13
+  - first:
+      213: 3908352658093027495
+    second: anim_1_melt_14
+  - first:
+      213: 883827579228632694
+    second: anim_1_melt_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 150
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: anim_1_melt_0
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 260
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4ceb38f474674570800000000000000
+      internalID: 8450833679327685710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anim_1_melt_1
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 260
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b33a36dd05b9a0f70800000000000000
+      internalID: 9154299964197937979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anim_1_melt_2
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 0
+        width: 260
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cbaf14ed49282040800000000000000
+      internalID: 4622990432012315591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anim_1_melt_3
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 260
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 123a102924e721d00800000000000000
+      internalID: 941954096456377121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anim_1_melt_4
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 0
+        width: 260
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c07c69be91011fc0800000000000000
+      internalID: -3526035252027035454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anim_1_melt_5
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 0
+        width: 260
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e64134b89ce5336b0800000000000000
+      internalID: -5317802515276557202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anim_1_melt_6
+      rect:
+        serializedVersion: 2
+        x: 1960
+        y: 0
+        width: 260
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21d44df71469faf60800000000000000
+      internalID: 8047816267196026130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anim_1_melt_7
+      rect:
+        serializedVersion: 2
+        x: 2280
+        y: 0
+        width: 260
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28b8bd5d4f6cbf9d0800000000000000
+      internalID: -2739377193462559870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anim_1_melt_8
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 0
+        width: 260
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17ed804419484f8e0800000000000000
+      internalID: -1660556603146314127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anim_1_melt_9
+      rect:
+        serializedVersion: 2
+        x: 2920
+        y: 0
+        width: 260
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75a0222471f92cc20800000000000000
+      internalID: 3225315205393287767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anim_1_melt_10
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 0
+        width: 260
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a04a6fb48b08095a0800000000000000
+      internalID: -6516567131768314870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anim_1_melt_11
+      rect:
+        serializedVersion: 2
+        x: 3560
+        y: 0
+        width: 260
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e479dbd9be2fc6eb0800000000000000
+      internalID: -4725134815240808626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anim_1_melt_12
+      rect:
+        serializedVersion: 2
+        x: 3880
+        y: 0
+        width: 260
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a95171aad1e8115b0800000000000000
+      internalID: -5399378220181678694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anim_1_melt_13
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 0
+        width: 260
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ad445a191a1272b0800000000000000
+      internalID: -5588375492495127131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anim_1_melt_14
+      rect:
+        serializedVersion: 2
+        x: 4520
+        y: 0
+        width: 260
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a0b69209024d3630800000000000000
+      internalID: 3908352658093027495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anim_1_melt_15
+      rect:
+        serializedVersion: 2
+        x: 4840
+        y: 0
+        width: 260
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 676bd96208cf34c00800000000000000
+      internalID: 883827579228632694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: fb825ed5465f8c642b101aa368d1e944
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":7.0,"y":1.0},"gridSpriteSize":{"x":260.0,"y":260.0},"gridSpriteOffset":{"x":40.0,"y":60.0},"gridSpritePadding":{"x":60.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      anim_1_melt_0: 8450833679327685710
+      anim_1_melt_1: 9154299964197937979
+      anim_1_melt_10: -6516567131768314870
+      anim_1_melt_11: -4725134815240808626
+      anim_1_melt_12: -5399378220181678694
+      anim_1_melt_13: -5588375492495127131
+      anim_1_melt_14: 3908352658093027495
+      anim_1_melt_15: 883827579228632694
+      anim_1_melt_2: 4622990432012315591
+      anim_1_melt_3: 941954096456377121
+      anim_1_melt_4: -3526035252027035454
+      anim_1_melt_5: -5317802515276557202
+      anim_1_melt_6: 8047816267196026130
+      anim_1_melt_7: -2739377193462559870
+      anim_1_melt_8: -1660556603146314127
+      anim_1_melt_9: 3225315205393287767
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
