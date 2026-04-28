@@ -6,6 +6,7 @@ public class PlayerMovement: MonoBehaviour
     // Character
     private Rigidbody2D _rigid;
     private SpriteRenderer _render;
+    private PlayerAnimation _pAnim;
 
     public Vector2 spawnPoint = Vector2.zero;
     public static bool playerPause = false;
@@ -22,6 +23,13 @@ public class PlayerMovement: MonoBehaviour
     [Tooltip("Magnification of falling speed when the character is attached to the climbing wall")]
     [Range(0f, 1f)] public float gripModifyY = 0.4f;
 
+    [Space(7)]
+    [Tooltip("Time when the character can be stopped (in seconds)")]
+    [Min(0f)] public float maxStopTime = 5f;
+
+    [Tooltip("Time the character stopped (in seconds)")]
+    public float stopTime = 0f;
+
     private Vector2 inputDirection;
 
 
@@ -35,6 +43,9 @@ public class PlayerMovement: MonoBehaviour
 
     [Tooltip("Charge time required to reach maximum jump force (in seconds)")]
     [Min(0f)] public float maxChargeTime = 1.5f;
+
+    [Tooltip("Time the character was charging (in seconds) (Maximum value: maxChargeTime)")]
+    public float jumpChargeTime = 0f;
 
     [Tooltip("Whether the character is charging the jump or not")]
     public bool isJumpCharging = false;
@@ -51,7 +62,6 @@ public class PlayerMovement: MonoBehaviour
     [Min(0f)] public float mushroomJumpForce = 30f;
 
     private InputAction _jumpAction;
-    private float jumpChargeTime = 0f;
 
 
     // Ground Check
@@ -98,19 +108,22 @@ public class PlayerMovement: MonoBehaviour
     public bool isWall;
 
     [Space(7)]
-    [Tooltip("Time when the character can be stopped on the climbing wall (in second)")]
+    [Tooltip("Time when the character can be stopped on the climbing wall (in seconds)")]
     [Min(0f)] public float maxWallStopTime = 0.5f;
+
+    [Tooltip("Time the character stopped on the climbing wall (in seconds) (Maximum value: maxWallStopTime)")]
+    public float wallStopTime = 0f;
 
     [Tooltip("Whether the character is stopped on the climbing wall or not")]
     public bool isWallStop;
 
-    private float wallStopTime = 0f;
 
 
     void Start()
     {
         _rigid = GetComponent<Rigidbody2D>();
         _render = GetComponent<SpriteRenderer>();
+        _pAnim = GetComponent<PlayerAnimation>();
         _jumpAction = InputSystem.actions.FindAction("Jump");
     }
 
@@ -121,7 +134,21 @@ public class PlayerMovement: MonoBehaviour
             return;
         }
 
-        GroundCheck();
+        if (_rigid.linearVelocity == Vector2.zero)
+        {
+            stopTime += Time.deltaTime;
+            if (stopTime >= maxStopTime)
+            {
+                _pAnim.Melt();
+                stopTime = 0f;
+            }
+        }
+        else
+        {
+            stopTime = 0f;
+        }
+
+            GroundCheck();
         WallCheck();
         Jump();
 
