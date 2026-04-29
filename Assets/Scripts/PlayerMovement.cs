@@ -3,6 +3,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement: MonoBehaviour
 {
+    // Management
+    private static PlayerMovement instance;
+    private float _deltaTime;
+
     // Character
     private Rigidbody2D _rigid;
     private SpriteRenderer _render;
@@ -119,6 +123,22 @@ public class PlayerMovement: MonoBehaviour
 
 
 
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+
+        GetComponent<PlayerInput>().enabled = true;
+    }
+
     void Start()
     {
         _rigid = GetComponent<Rigidbody2D>();
@@ -134,9 +154,11 @@ public class PlayerMovement: MonoBehaviour
             return;
         }
 
+        _deltaTime = Time.deltaTime;
+
         if (_rigid.linearVelocity == Vector2.zero)
         {
-            stopTime += Time.deltaTime;
+            stopTime += _deltaTime;
             if (stopTime >= maxStopTime)
             {
                 _pAnim.Melt();
@@ -148,7 +170,7 @@ public class PlayerMovement: MonoBehaviour
             stopTime = 0f;
         }
 
-            GroundCheck();
+        GroundCheck();
         WallCheck();
         Jump();
 
@@ -195,10 +217,10 @@ public class PlayerMovement: MonoBehaviour
     {
         Vector2 wallCheckDirection = Vector2.right * inputDirection.x;
 
-        Vector2 wallCheckCenterPoint = new Vector2(transform.position.x + (wallCheckOffsetX * inputDirection.x), transform.position.y + wallCheckOffsetY);
-        Vector2 wallCheckTopPoint = new Vector2(wallCheckCenterPoint.x, wallCheckCenterPoint.y + wallCheckPointOffset);
-        bool wallCheckCenter = Physics2D.Raycast(wallCheckCenterPoint, wallCheckDirection, wallCheckDistance, layerWall);
-        bool wallCheckTop = Physics2D.Raycast(wallCheckTopPoint, wallCheckDirection, wallCheckDistance, layerWall);
+        Vector2 wallCheckPoint = new Vector2(transform.position.x + (wallCheckOffsetX * inputDirection.x), transform.position.y + wallCheckOffsetY);
+        bool wallCheckCenter = Physics2D.Raycast(wallCheckPoint, wallCheckDirection, wallCheckDistance, layerWall);
+        wallCheckPoint = new Vector2(wallCheckPoint.x, wallCheckPoint.y + wallCheckPointOffset);
+        bool wallCheckTop = Physics2D.Raycast(wallCheckPoint, wallCheckDirection, wallCheckDistance, layerWall);
 
         isWall = wallCheckTop && wallCheckCenter && !isGround;
     }
@@ -216,7 +238,7 @@ public class PlayerMovement: MonoBehaviour
             {
                 isJumpCharging = true;
 
-                jumpChargeTime += Time.deltaTime;
+                jumpChargeTime += _deltaTime;
                 jumpChargeTime = Mathf.Clamp(jumpChargeTime, 0f, maxChargeTime);
             }
             if (_jumpAction.WasReleasedThisFrame())
@@ -251,7 +273,7 @@ public class PlayerMovement: MonoBehaviour
 
     private void WallStop()
     {
-        wallStopTime += Time.deltaTime;
+        wallStopTime += _deltaTime;
         _rigid.gravityScale = 0f;
 
         if (wallStopTime >= maxWallStopTime || !isWall)

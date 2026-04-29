@@ -34,7 +34,7 @@ public class PlayerInteraction : MonoBehaviour
         if (collision.TryGetComponent<SpawnPoint>(out SpawnPoint _spawn))
         {
             _pMove.spawnPoint = _spawn.spawnPos;
-            collision.enabled = true;
+            collision.enabled = false;
         }
     }
 
