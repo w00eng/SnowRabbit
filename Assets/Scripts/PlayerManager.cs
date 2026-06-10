@@ -48,6 +48,7 @@ public class PlayerManager : MonoBehaviour
 
     public void Reload()
     {
+        DataManager.Instance.temporaryItemData = DataManager.Instance.NowPlayData.Items;
         GameManager.Instance.LoadScene(DataManager.Instance.NowPlayData.lastSceneIndex);
     }
 

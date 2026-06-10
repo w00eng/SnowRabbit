@@ -53,6 +53,8 @@ public class CheckPoint : MonoBehaviour
         DataManager.Instance.NowPlayData.CheckPoints[checkPointIndex] = true;
         DataManager.Instance.NowPlayData.lastSpawnPoint = SpawnPos;
         DataManager.Instance.NowPlayData.lastSceneIndex = GameManager.Instance.NowScene;
+        Debug.Log("temporaryItemData Save");
+        DataManager.Instance.NowPlayData.Items = DataManager.Instance.temporaryItemData;
         DataManager.Instance.SaveData();
     }
 }

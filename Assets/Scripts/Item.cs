@@ -15,8 +15,7 @@ public class Item : MonoBehaviour
 
     public void SetActivated()
     {
-        DataManager.Instance.NowPlayData.Items[itemIndex] = true;
-        DataManager.Instance.SaveData();
+        DataManager.Instance.temporaryItemData[itemIndex] = true;
 
         gameObject.SetActive(false);
     }
