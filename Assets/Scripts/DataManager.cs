@@ -15,6 +15,7 @@ public class DataManager : MonoBehaviour
     public static DataManager Instance {  get { return instance; } }
 
     public PlayData NowPlayData { get; set; } = new PlayData();
+    public bool[] temporaryItemData;
 
     private string path;
     public int SaveSlot { private get; set; } = -1;
@@ -62,6 +63,7 @@ public class DataManager : MonoBehaviour
         {
             string data = File.ReadAllText(filePath);
             NowPlayData = JsonUtility.FromJson<PlayData>(data);
+            temporaryItemData = NowPlayData.Items;
         }
     }
 }
